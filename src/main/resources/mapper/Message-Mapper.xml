@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.mapper.YunKaiMessageMapper">
+
+	<sql id="tableName">
+		yunkai_t_message
+	</sql>
+
+	<sql id="selectColumns">
+		*
+	</sql>
+
+	<insert id="create" parameterType="com.mybatis.domain.YunKaiMessageModel"  keyProperty="id">
+		INSERT INTO
+		<include refid="tableName" />
+		(`user_id`, `message`)
+		VALUES (#{userId}, #{message})
+	</insert>
+
+</mapper>
